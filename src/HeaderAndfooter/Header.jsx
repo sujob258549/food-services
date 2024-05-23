@@ -10,10 +10,10 @@ import logoimg2 from '../assets/image/icon/Vector.png'
 const navber = <>
 
     <NavLink to={'/'}>Home</NavLink>
-    <NavLink>CONTACT us</NavLink>
-    <NavLink>DASHBOARD</NavLink>
-    <NavLink>Our Menu</NavLink>
-    <NavLink>Our Shop</NavLink>
+    {/* <NavLink >CONTACT US</NavLink>
+    <NavLink>DASHBOARD</NavLink> */}
+    <NavLink to={'/ourmenu'}>Our Menu</NavLink>
+    {/* <NavLink>Our Shop</NavLink> */}
     <h2>
         <img className='w-12' src={logoimg} alt="" />
     </h2>

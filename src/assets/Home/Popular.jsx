@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
 import './slider.css'
 import Sheredtitle from "../Components/Sheredtitle";
+import useMenu from "../Castomhuk/useMenu";
 
 
 const Popular = () => {
 
-    const [manu, setManu] = useState([]);
-    useEffect(() => {
-        fetch('../../../public/menu.json')
-            .then(res => res.json())
-            .then(data => {
-                const filterData = data.filter(item => item.category === 'popular')
-                setManu(filterData)
-            })
-    }, [])
+    const [menu] = useMenu();
+    const populerProduct = menu.filter(product => product.category === 'popular') 
+
+    // const [manu, setManu] = useState([]);
+    // useEffect(() => {
+    //     fetch('../../../public/menu.json')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             const filterData = data.filter(item => item.category === 'popular')
+    //             setManu(filterData)
+    //         })
+    // }, [])
     return (
         <>
             <Sheredtitle
@@ -26,13 +30,13 @@ const Popular = () => {
             </Sheredtitle>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-5 md:pt-10">
                 {
-                    manu.map(items => (
+                    populerProduct.map(items => (
                         <>
 
                             <div className="">
                                 <div className="flex gap-5">
                                     <div className="flex gap-5">
-                                        <img className="w-24 h-24 border-radious" src={items.image} alt="" />
+                                        <img className="w-20 h-20 border-radious" src={items.image} alt="" />
                                         <div>
                                             <h2 className="text-xl font-bold">{items.name}----------------</h2>
                                             <p>{items.recipe}</p>

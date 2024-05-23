@@ -1,13 +1,14 @@
 .menu a{
     padding: 10px 15px;
-    background-color: aliceblue;
+    color: white;
     margin-left: 5px;
-    color: black;
     font-weight: 600;
     font-size: 18px;
     border-radius: 4px;
+    text-transform: uppercase;
 }
 
-.menu a.activ{
+.menu a.active{
     border-bottom: 4px red;
+    color: #edff25af;
 }
