@@ -1,0 +1,13 @@
+.menu a{
+    padding: 10px 15px;
+    background-color: aliceblue;
+    margin-left: 5px;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.menu a.activ{
+    border-bottom: 4px red;
+}

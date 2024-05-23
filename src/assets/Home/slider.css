@@ -1,0 +1,19 @@
+.text-shodows{
+    text-shadow: 1px 1px 10px black;
+}
+
+
+.bistro-bos-servises{
+    background: url('../image/home/chef-service.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.from-our-menu{
+    background: url('../image/home/menu.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.border-radious{
+    border-radius: 0px 100px 100px 100px;
+}
