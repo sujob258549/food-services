@@ -34,70 +34,52 @@ const Ourmenu = () => {
                 <div className="">
                     <Item item={offeredProduct}></Item>
                 </div>
-                <div className="flex justify-center py-10  md:py-20">
-
-                    <button type="button" className="text-[16px] focus:outline-black  font-semibold rounded-lg py-2.5 px-4 border-b-4 border-black text-black hover:bg-slate-500 hover:text-white duration-500">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                
             </div>
             {/* dessert */}
             <div>
                 <Subbaner img={desdartImg} header={'desserts'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={offeredProduct}></Item>
+                    <Item item={dessertProduct} cetagory={'dessert'}></Item>
                 </div>
-                <div className="flex justify-center py-10  md:py-20">
-
-                    <button type="button" className="text-[16px] focus:outline-black  font-semibold rounded-lg py-2.5 px-4 border-b-4 border-black text-black hover:bg-slate-500 hover:text-white duration-500">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                
             </div>
             {/* pizza */}
             <div>
                 <Subbaner img={pizzaImg} header={'pizza'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={pizzaProduct}></Item>
+                    <Item item={pizzaProduct} cetagory={'pizza'}></Item>
                 </div>
-                <div className="flex justify-center py-10  md:py-20">
-
-                    <button type="button" className="text-[16px] focus:outline-black  font-semibold rounded-lg py-2.5 px-4 border-b-4 border-black text-black hover:bg-slate-500 hover:text-white duration-500">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                
             </div>
             {/* salads */}
             <div>
                 <Subbaner img={saladImg} header={'salads'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={saladProduct}></Item>
+                    <Item item={saladProduct} cetagory={'salad'}></Item>
                 </div>
-                <div className="flex justify-center py-10  md:py-20">
-
-                    <button type="button" className="text-[16px] focus:outline-black  font-semibold rounded-lg py-2.5 px-4 border-b-4 border-black text-black hover:bg-slate-500 hover:text-white duration-500">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                
             </div>
             {/* soups */}
             <div>
                 <Subbaner img={soupImg} header={'soups'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={soupProduct}></Item>
+                    <Item item={soupProduct} cetagory={'soup'}></Item>
                 </div>
-                <div className="flex justify-center py-10  md:py-20">
-
-                    <button type="button" className="text-[16px] focus:outline-black  font-semibold rounded-lg py-2.5 px-4 border-b-4 border-black text-black hover:bg-slate-500 hover:text-white duration-500">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                
             </div>
             {/* drink */}
             <div>
                 <Subbaner img={desdartImg} header={'drink'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={drinksProduct}></Item>
+                    <Item item={drinksProduct} cetagory={"drinks"}></Item>
                 </div>
-                <div className="flex justify-center py-10  md:py-20">
-
-                    <button type="button" className="text-[16px] focus:outline-black  font-semibold rounded-lg py-2.5 px-4 border-b-4 border-black text-black hover:bg-slate-500 hover:text-white duration-500">ORDER YOUR FAVOURITE FOOD</button>
-                </div>
+                
             </div>
           <Footer></Footer>
 

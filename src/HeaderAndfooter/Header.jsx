@@ -13,7 +13,7 @@ const navber = <>
     {/* <NavLink >CONTACT US</NavLink>
     <NavLink>DASHBOARD</NavLink> */}
     <NavLink to={'/ourmenu'}>Our Menu</NavLink>
-    {/* <NavLink>Our Shop</NavLink> */}
+    <NavLink to={'/ourshop'}>Our Shop</NavLink>
     <h2>
         <img className='w-12' src={logoimg} alt="" />
     </h2>

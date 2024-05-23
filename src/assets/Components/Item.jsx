@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 
 
-const Item = ({item}) => {
+const Item = ({item, cetagory}) => {
     return (
+        <>
         <div className="grid grid-cols-1  lg:grid-cols-2 gap-10">
             {
                 item.map(items => (
@@ -25,6 +27,11 @@ const Item = ({item}) => {
                 ))
             }
         </div>
+        <div className="py-10 md:py-14 flex justify-center">
+        <Link to={`/ourshop/${cetagory}`} type="button" className="text-[16px] focus:outline-black  font-semibold rounded-lg py-2.5 px-4 border-b-4 border-black text-black hover:bg-slate-500 hover:text-white duration-500">ORDER YOUR FAVOURITE FOOD</Link>
+        </div>
+        
+        </>
     );
 };
 

@@ -3,6 +3,7 @@ import Root from "./assets/Root/Root";
 import Home from "./assets/Home/Home";
 import Errorpage from "./assets/Components/Errorpage";
 import Ourmenu from "./assets/Ourmenu/Ourmenu";
+import OurShop from "./assets/Ourshop/OurShop";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: '/ourmenu',
                 element: <Ourmenu></Ourmenu>
+            },
+            {
+                path: '/ourshop/:cetagory',
+                element: <OurShop></OurShop>
             }
         ]
     }
