@@ -7,7 +7,7 @@ const PriductCard = () => {
     const [products, setProduct] = useState([]);
     console.log(products);
     useEffect(() => {
-        fetch('../../../public/menu.json')
+        fetch('http://localhost:3000/menu')
             .then(res => res.json())
             .then(data => {
                 setProduct(data)

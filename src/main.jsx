@@ -4,13 +4,16 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import router from './Router.jsx'
 import { HelmetProvider } from 'react-helmet-async'
+import Context from './assets/Firebase/Context.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div className=''>
-    <React.StrictMode>
-      <HelmetProvider>
-      <RouterProvider router={router}></RouterProvider>
-      </HelmetProvider>
-    </React.StrictMode>,
+    <Context>
+      <React.StrictMode>
+        <HelmetProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </HelmetProvider>
+      </React.StrictMode>,
+    </Context>
   </div>
 )

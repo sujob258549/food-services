@@ -1,0 +1,10 @@
+.background-img{
+    background: url('../image/others/authentication.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.shadow{
+    box-shadow: 1px 1px 10px;
+}

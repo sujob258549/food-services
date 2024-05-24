@@ -4,6 +4,9 @@ import Home from "./assets/Home/Home";
 import Errorpage from "./assets/Components/Errorpage";
 import Ourmenu from "./assets/Ourmenu/Ourmenu";
 import OurShop from "./assets/Ourshop/OurShop";
+import SignUp from "./assets/SignInandSignOut/SignUp";
+import Login from "./assets/SignInandSignOut/Login";
+
 
 const router = createBrowserRouter([
     {
@@ -24,7 +27,16 @@ const router = createBrowserRouter([
             },
             {
                 path: '/ourshop/:cetagory',
-                element: <OurShop></OurShop>
+                element :<OurShop></OurShop>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
+            }
+            ,
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ]
     }

@@ -22,7 +22,7 @@ export default function RatingCarodal() {
     const [manu, setManu] = useState([]);
     console.log(manu);
     useEffect(() => {
-        fetch('../../../public/reviews.json')
+        fetch('http://localhost:3000/rating')
             .then(res => res.json())
             .then(data => {
                 const filterData = data.filter(item => item)

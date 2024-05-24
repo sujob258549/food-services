@@ -1,25 +1,42 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import mainlogo from '../../src/assets/image/mainlogo.png'
 
 import './style.css'
 
 import logoimg from '../assets/image/icon/151-1511569_cart-notifications-free-shopping-cart-favicon-hd-png-removebg-preview.png'
 import logoimg2 from '../assets/image/icon/Vector.png'
+import { useContext } from 'react';
+import { CreatAuthContext } from '../assets/Firebase/Context';
+import { FaShoppingCart } from 'react-icons/fa';
 
 
-const navber = <>
-
-    <NavLink to={'/'}>Home</NavLink>
-    {/* <NavLink >CONTACT US</NavLink>
-    <NavLink>DASHBOARD</NavLink> */}
-    <NavLink to={'/ourmenu'}>Our Menu</NavLink>
-    <NavLink to={'/ourshop'}>Our Shop</NavLink>
-    <h2>
-        <img className='w-12' src={logoimg} alt="" />
-    </h2>
-</>
 
 const Header = () => {
+    const { user, signout } = useContext(CreatAuthContext);
+    const navber = <>
+
+        <NavLink to={'/'}>Home</NavLink>
+        {/* <NavLink >CONTACT US</NavLink>
+<NavLink>DASHBOARD</NavLink> */}
+        <NavLink to={'/ourmenu'}>Our Menu</NavLink>
+        <NavLink to={'/ourshop/:cetagory'}>Our Shop</NavLink>
+        <Link className="btn p-0 bg-transparent hover:bg-transparent border-none">
+            <FaShoppingCart />
+            <div className="badge badge-secondary">+99</div>
+        </Link>
+        {
+            user && (
+                <>
+
+                    <h2>
+                        <img className='w-12' src={logoimg} alt="" />
+                    </h2>
+
+                </>
+            )
+        }
+    </>
+
     return (
         <div className=''>
             <div className="navbar fixed z-50 px-5 md:px-10 max-w-[1280px] mx-auto bg-opacity-40 bg-black text-white">
@@ -44,9 +61,19 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="animate-bounce focus:animate-none hover:animate-none inline-flex text-md font-medium bg-gradient-to-r border from-blue-500 mt-3 px-4 py-2 rounded-lg tracking-wide text-white">
-                        <span className="ml-2 mr-5">Sign in</span></button>
-                        <img className='ml-3' src={logoimg2} alt="" />
+                    {user ? (
+                        <button onClick={signout} className="animate-bounce focus:animate-none hover:animate-none inline-flex text-md font-medium bg-gradient-to-r border from-blue-500 mt-3 px-4 py-2 rounded-lg tracking-wide text-white">
+                            <span className="ml-2 mr-5">Sign out</span>
+                        </button>
+                    ) : (
+                        <Link to="/login" className="animate-bounce focus:animate-none hover:animate-none inline-flex text-md font-medium bg-gradient-to-r border from-blue-500 mt-3 px-4 py-2 rounded-lg tracking-wide text-white">
+                            <span className="ml-2 mr-5">Sign in</span>
+                        </Link>
+                    )}
+                    {user && <span class="relative inline-block">
+                        <img src={user.photoURL ? user.photoURL : logoimg2} class="object-cover w-16 h-16 rounded-full border-4 border-white bg-slate-600" />
+                        <span class="absolute animate-pulse top-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></span>
+                    </span>}
                 </div>
             </div>
         </div>
@@ -54,3 +81,4 @@ const Header = () => {
 };
 
 export default Header;
+

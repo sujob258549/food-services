@@ -11,7 +11,7 @@ const Popular = () => {
 
     // const [manu, setManu] = useState([]);
     // useEffect(() => {
-    //     fetch('../../../public/menu.json')
+    //     fetch('http://localhost:3000/menu')
     //         .then(res => res.json())
     //         .then(data => {
     //             const filterData = data.filter(item => item.category === 'popular')
