@@ -6,6 +6,7 @@ import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
 import { useState } from "react";
 import ProductCard from "../Components/ProductCard";
 import useMenu from "../Castomhuk/useMenu";
+import OurShopMap from './OurShopMap';
 
 
 
@@ -34,19 +35,19 @@ const OurShop = () => {
 
                 </TabList>
                 <TabPanel>
-                    <ProductCard products={saladProduct} producthading={'Salad'}></ProductCard>
+                    <OurShopMap products={saladProduct} producthading={'Salad'}></OurShopMap>
                 </TabPanel>
                 <TabPanel>
-                    <ProductCard products={pizzaProduct} producthading={'pizza'}></ProductCard>
+                    <OurShopMap products={pizzaProduct} producthading={'pizza'}></OurShopMap>
                 </TabPanel>
                 <TabPanel>
-                    <ProductCard products={soupProduct} producthading={"soup"}></ProductCard>
+                    <OurShopMap products={soupProduct} producthading={"soup"}></OurShopMap>
                 </TabPanel>
                 <TabPanel>
-                    <ProductCard products={dessertProduct} producthading={"desserts"}></ProductCard>
+                    <OurShopMap products={dessertProduct} producthading={"desserts"}></OurShopMap>
                 </TabPanel>
                 <TabPanel>
-                    <ProductCard products={drinksProduct} producthading={"drink"}></ProductCard>
+                    <OurShopMap products={drinksProduct} producthading={"drink"}></OurShopMap>
                 </TabPanel>
 
             </Tabs>

@@ -6,6 +6,13 @@ import Ourmenu from "./assets/Ourmenu/Ourmenu";
 import OurShop from "./assets/Ourshop/OurShop";
 import SignUp from "./assets/SignInandSignOut/SignUp";
 import Login from "./assets/SignInandSignOut/Login";
+import MainDasbord from "./assets/Dasbord/MainDasbord";
+import UserHome from "./assets/Dasbord/UserHome";
+import Resarvation from "./assets/Dasbord/Resarvation";
+import PrementHistory from "./assets/Dasbord/PrementHistory";
+import Hycary from "./assets/Dasbord/Hycary";
+import AddReview from "./assets/Dasbord/AddReview";
+import Mybooking from "./assets/Dasbord/Mybooking";
 
 
 const router = createBrowserRouter([
@@ -39,7 +46,45 @@ const router = createBrowserRouter([
                 element: <Login></Login>
             }
         ]
+    },
+    {
+        path: 'dashbord',
+        element: <MainDasbord></MainDasbord>,
+        children:[
+            {
+                path: 'home',
+                element: <UserHome></UserHome>
+
+            },
+            {
+                path: 'reservation',
+                element: <Resarvation></Resarvation>
+
+            }
+            ,{
+                path: 'prementhistory',
+                element: <PrementHistory></PrementHistory>
+
+            }
+            ,{
+                path: 'mycart',
+                element: <Hycary></Hycary>
+
+            }
+            ,{
+                path: 'addreview',
+                element: <AddReview></AddReview>
+
+            }
+            ,{
+                path: 'mybooking',
+                element: <Mybooking></Mybooking>
+
+            }
+           
+        ]
     }
+
 ])
 
 

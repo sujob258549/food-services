@@ -12,6 +12,7 @@ import soupImg from '../image/menu/soup-bg.jpg'
 import saladImg from '../image/menu/salad-bg.jpg'
 import bannerImg from '../image/menu/banner3.jpg'
 import Footer from '../../HeaderAndfooter/Footer';
+import ItemsMap from './ItemsMap';
 
 
 const Ourmenu = () => {
@@ -41,7 +42,7 @@ const Ourmenu = () => {
                 <Subbaner img={desdartImg} header={'desserts'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={dessertProduct} cetagory={'dessert'}></Item>
+                  <ItemsMap items={dessertProduct} cetagory={'dessert'}></ItemsMap>
                 </div>
                 
             </div>
@@ -50,7 +51,7 @@ const Ourmenu = () => {
                 <Subbaner img={pizzaImg} header={'pizza'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={pizzaProduct} cetagory={'pizza'}></Item>
+                    <ItemsMap items={pizzaProduct} cetagory={'pizza'}></ItemsMap>
                 </div>
                 
             </div>
@@ -59,7 +60,7 @@ const Ourmenu = () => {
                 <Subbaner img={saladImg} header={'salads'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={saladProduct} cetagory={'salad'}></Item>
+                    <ItemsMap items={saladProduct} cetagory={'salad'}></ItemsMap>
                 </div>
                 
             </div>
@@ -68,7 +69,7 @@ const Ourmenu = () => {
                 <Subbaner img={soupImg} header={'soups'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={soupProduct} cetagory={'soup'}></Item>
+                    <ItemsMap items={soupProduct} cetagory={'soup'}></ItemsMap>
                 </div>
                 
             </div>
@@ -77,7 +78,7 @@ const Ourmenu = () => {
                 <Subbaner img={desdartImg} header={'drink'} paragrap={'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'}></Subbaner>
 
                 <div className="mt-10 md:mt-20">
-                    <Item item={drinksProduct} cetagory={"drinks"}></Item>
+                    <ItemsMap items={drinksProduct} catagory={"drinks"}></ItemsMap>
                 </div>
                 
             </div>
