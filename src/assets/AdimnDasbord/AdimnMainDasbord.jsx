@@ -1,12 +1,14 @@
 import { BiBookHeart } from "react-icons/bi";
-import { FaCalendarAlt, FaHome, FaShoppingCart } from "react-icons/fa";
+import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart } from "react-icons/fa";
 import { FaBagShopping, FaRankingStar } from "react-icons/fa6";
+import { ImSpoonKnife } from "react-icons/im";
+import { IoMan } from "react-icons/io5";
+import { TfiMenuAlt } from "react-icons/tfi";
 import { NavLink, Outlet } from "react-router-dom";
-import UserHome from "./UserHome";
-import './dasbord.css'
 
 
-const MainDasbord = () => {
+
+const AdimnMainDasbord = () => {
     return (
         <div>
             <div className="flex min-h-screen gap-10 bg-gray-100 w-[90%]  mx-auto  lg:px-10">
@@ -30,16 +32,16 @@ const MainDasbord = () => {
                                             d="M4 6h16M4 12h16M4 18h16"
                                         />
                                     </svg>
-                                    Dashboard
+                                  Admin  Dashboard
                                 </NavLink>
                             </div>
                             <div className="flex flex-col flex-1 gap-5">
-                                <NavLink to={'/dashbord/home'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaHome className="text-2xl"></FaHome></span> User Home</NavLink>
-                                <NavLink to={'/dashbord/reservation'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaCalendarAlt className="text-2xl"></FaCalendarAlt></span> Reservation</NavLink>
-                                <NavLink to={'/dashbord/prementhistory'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaBagShopping className="text-2xl"></FaBagShopping></span>Payment History</NavLink>
-                                <NavLink to={'/dashbord/mycart'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaShoppingCart className="text-2xl"></FaShoppingCart></span> My Cart</NavLink>
-                                <NavLink to={'/dashbord/addreview'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaRankingStar className="text-2xl"></FaRankingStar></span> Add Review</NavLink>
-                                <NavLink to={'/dashbord/mybooking'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><BiBookHeart className="text-2xl"></BiBookHeart></span>My Booking</NavLink>
+                                <NavLink to={'/admindashbord/adminHome'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaHome className="text-2xl"></FaHome></span> Admin Home</NavLink>
+                                <NavLink  to={'/admindashbord/AddItem'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><ImSpoonKnife className="text-2xl"></ImSpoonKnife></span> add items</NavLink>
+                                <NavLink  to={'/admindashbord/manegeitem'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><TfiMenuAlt className="text-2xl"></TfiMenuAlt></span>manage items</NavLink>
+                                <NavLink to={'/admindashbord/manegebook'}  className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaBook className="text-2xl"></FaBook></span>manage bookinges</NavLink>
+                                <NavLink to={'/admindashbord/alluser'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><IoMan className="text-2xl"></IoMan></span> All user</NavLink>
+                               
                             </div>
                         </nav>
                     </div>
@@ -58,4 +60,4 @@ const MainDasbord = () => {
     );
 };
 
-export default MainDasbord;
+export default AdimnMainDasbord;

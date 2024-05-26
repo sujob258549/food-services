@@ -25,15 +25,13 @@ const Header = () => {
         <NavLink to={'/ourshop/:cetagory'}>Our Shop</NavLink>
         <Link to={'/dashbord/home'} className="btn p-0 bg-transparent hover:bg-transparent border-none">
             <FaShoppingCart />
-            <div className="badge badge-secondary"> hellow{cart.length}</div>
+            <div className="badge badge-secondary">{cart.length}</div>
         </Link>
         {
             user && (
                 <>
-
-                    <h2>
-                        <img className='w-12' src={logoimg} alt="" />
-                    </h2>
+                
+                       <Link to={'/admindashbord/adminHome'}>Adimn</Link>
 
                 </>
             )

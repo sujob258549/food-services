@@ -8,25 +8,34 @@ import SignUp from "./assets/SignInandSignOut/SignUp";
 import Login from "./assets/SignInandSignOut/Login";
 import MainDasbord from "./assets/Dasbord/MainDasbord";
 import UserHome from "./assets/Dasbord/UserHome";
-import Resarvation from "./assets/Dasbord/Resarvation";
 import PrementHistory from "./assets/Dasbord/PrementHistory";
 import Hycary from "./assets/Dasbord/Hycary";
 import AddReview from "./assets/Dasbord/AddReview";
 import Mybooking from "./assets/Dasbord/Mybooking";
+import Resarvation from "./assets/Dasbord/Resarvation";
+import PrementResurvation from "./assets/Dasbord/PrementResurvation";
+import Errorpagedasbord from "./assets/Dasbord/Errorpagedasbord";
+import AdimnMainDasbord from "./assets/AdimnDasbord/AdimnMainDasbord";
+import AdminHome from "./assets/AdimnDasbord/AdminHome";
+import AddItem from "./assets/AdimnDasbord/AddItem";
+import ManageItem from "./assets/AdimnDasbord/ManageItem";
+import Bookingmanege from "./assets/AdimnDasbord/Bookingmanege";
+import AllUser from "./assets/AdimnDasbord/AllUser";
+import Update from "./assets/AdimnDasbord/Update";
 
 
 const router = createBrowserRouter([
     {
-        path : '/',
+        path: '/',
         element: <Root></Root>,
         errorElement: <Errorpage></Errorpage>
         ,
-        children:[
+        children: [
             {
                 path: "/",
-                element : <Home></Home>
+                element: <Home></Home>
             }
-            , 
+            ,
 
             {
                 path: '/ourmenu',
@@ -34,7 +43,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/ourshop/:cetagory',
-                element :<OurShop></OurShop>
+                element: <OurShop></OurShop>
             },
             {
                 path: '/signup',
@@ -50,7 +59,8 @@ const router = createBrowserRouter([
     {
         path: 'dashbord',
         element: <MainDasbord></MainDasbord>,
-        children:[
+        errorElement: <Errorpagedasbord></Errorpagedasbord>,
+        children: [
             {
                 path: 'home',
                 element: <UserHome></UserHome>
@@ -61,27 +71,75 @@ const router = createBrowserRouter([
                 element: <Resarvation></Resarvation>
 
             }
-            ,{
+            , {
                 path: 'prementhistory',
                 element: <PrementHistory></PrementHistory>
 
             }
-            ,{
+            , {
                 path: 'mycart',
                 element: <Hycary></Hycary>
 
             }
-            ,{
+            , {
                 path: 'addreview',
                 element: <AddReview></AddReview>
 
             }
-            ,{
+            , {
                 path: 'mybooking',
                 element: <Mybooking></Mybooking>
 
             }
+            , {
+                path: 'prement',
+                element: <PrementResurvation></PrementResurvation>
+
+            }
+
+        ]
+    },
+    {
+        path: 'admindashbord',
+        element: <AdimnMainDasbord></AdimnMainDasbord>,
+        children: [
+            {
+                path: 'adminHome',
+                element: <AdminHome></AdminHome>
+
+            }
+            ,
+            {
+                path: 'additem',
+                element: <AddItem></AddItem>
+
+            }
+            ,
+            {
+                path: 'manegeitem',
+                element: <ManageItem></ManageItem>
+
+            }
+            ,
+            {
+                path: 'manegebook',
+                element: <Bookingmanege></Bookingmanege>
+
+            }
+            ,
+            {
+                path: 'alluser',
+                element: <AllUser></AllUser>
+
+            }
+            ,
+            {
+                path: 'update',
+                element: <Update></Update>
+
+            }
            
+
         ]
     }
 
