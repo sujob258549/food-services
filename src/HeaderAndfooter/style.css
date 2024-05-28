@@ -12,3 +12,10 @@
     border-bottom: 4px red;
     color: #edff25af;
 }
+
+
+@media only screen and (max-width: 992px) {
+   .menu a{
+    color: black;
+   }
+  }

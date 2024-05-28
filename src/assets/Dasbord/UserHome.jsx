@@ -3,11 +3,16 @@ import { CiStar } from "react-icons/ci";
 import { FaCalendarAlt, FaShoppingCart } from "react-icons/fa";
 import { PiBookOpenUserFill } from "react-icons/pi";
 import './user.css'
+import { useContext } from "react";
+import { CreatAuthContext } from "../Firebase/Context";
+import Usecart from "../Castomhuk/Usecart";
 
 
 const UserHome = () => {
+    const {user} = useContext(CreatAuthContext);
+    const [refetch , cart] = Usecart()
     return (
-        <div>
+        <div className="px-5">
             <h1 className="text-xl font-medium font-cinzel">Hi welcome bake!</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-5">
                 <div className="flex gap-5 rounded-md py-5 px-10 items-center bg-gradient-to-r from-[#BB34F5] to-[#FCDBFF]">
@@ -15,8 +20,8 @@ const UserHome = () => {
                         <PiBookOpenUserFill className="text-3xl font-bold" ></PiBookOpenUserFill>
                     </div>
                     <div>
-                        <h3 className="text-4xl font-bold">205</h3>
-                        <p className="text-2xl ">Menu</p>
+                        <h3 className="text-4xl font-bold text-center">{cart.length}</h3>
+                        <p className="text-2xl text-center">Menu</p>
                     </div>
                 </div>
                 <div className="flex gap-5 rounded-md py-5 px-10 items-center bg-gradient-to-r from-[#D3A256] to-[#FDE8C0]">
@@ -24,8 +29,8 @@ const UserHome = () => {
                         <PiBookOpenUserFill className="text-3xl font-bold" ></PiBookOpenUserFill>
                     </div>
                     <div>
-                        <h3 className="text-4xl font-bold">205</h3>
-                        <p className="text-2xl ">Menu</p>
+                        <h3 className="text-4xl text-center font-bold">205</h3>
+                        <p className="text-2xl  text-center">Shop</p>
                     </div>
                 </div>
                 <div className="flex gap-5 rounded-md py-5 px-10 items-center bg-gradient-to-r from-[#FE4880] to-[#FECDE9]">
@@ -33,8 +38,8 @@ const UserHome = () => {
                         <PiBookOpenUserFill className="text-3xl font-bold" ></PiBookOpenUserFill>
                     </div>
                     <div>
-                        <h3 className="text-4xl font-bold">205</h3>
-                        <p className="text-2xl ">Menu</p>
+                        <h3 className="text-4xl  text-center font-bold">205</h3>
+                        <p className="text-2xl  text-center ">Contact</p>
                     </div>
                 </div>
             </div>
@@ -44,14 +49,14 @@ const UserHome = () => {
                     <div>
                         <div class="avatar online">
                             <div class="w-24 rounded-full">
-                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img src={user.photoURL} />
                             </div>
 
                         </div>
-                        <h3 className="text-3xl font-cinzel  font-semibold ">Md Sujon Mia</h3>
+                        <h3 className="text-3xl font-cinzel  font-semibold ">{user.displayName}</h3>
                     </div>
                 </div>
-                <div className="border-4  min-h-80 h-full border-[#D1A054]">
+                <div className="md:border-4 border-b-4  md:min-h-80 md:h-full border-[#D1A054]">
 
                 </div>
                 <div className="bg-[#FEF9C3] p-10  min-h-80">

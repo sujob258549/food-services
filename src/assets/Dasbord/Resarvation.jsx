@@ -61,7 +61,7 @@ const Resarvation = () => {
                 </div>
             </div>
             <Sheredtitle subhading={'---Visit Us---'} hading={'OUR LOCATION'}></Sheredtitle>
-            <div className='grid grid-cols-1 md:grid-cols-3  gap-5'>
+            <div className='grid grid-cols-3  gap-5 md:px-0 px-5'>
 
                 <div className='bg-[#D1A054] p-5'>
                     <FaPhoneAlt className='w-full text-white text-center mx-auto '></FaPhoneAlt>

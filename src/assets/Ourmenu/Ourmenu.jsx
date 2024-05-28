@@ -25,7 +25,7 @@ const Ourmenu = () => {
     const drinksProduct = menu.filter(product => product.category === 'drinks')
 
     return (
-        <div className='mx-auto max-w-[1280px]'>
+        <div className='mx-auto max-w-[1280px] px-5'>
             <Header></Header>
 
             {/* offer product */}

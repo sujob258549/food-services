@@ -24,7 +24,6 @@ const ProductCard = ({ product }) => {
             }
             axiosSecur.post('/carts', cartdata)
             .then(result => {
-                console.log(result);
                 if(result.data.insertedId){
                     Swal.fire({
                         position: "top-end",
@@ -36,7 +35,6 @@ const ProductCard = ({ product }) => {
                       refetch()
                 }
             })
-            console.log(cartdata);
         }
         else {
             const swalWithBootstrapButtons = Swal.mixin({

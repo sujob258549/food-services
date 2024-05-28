@@ -5,7 +5,6 @@ import Sheredtitle from "../Components/Sheredtitle";
 const PriductCard = () => {
 
     const [products, setProduct] = useState([]);
-    console.log(products);
     useEffect(() => {
         fetch('http://localhost:3000/menu')
             .then(res => res.json())

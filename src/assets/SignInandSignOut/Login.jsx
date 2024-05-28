@@ -7,8 +7,10 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import Swal from 'sweetalert2';
 import { from } from 'env-var';
+import UsePublickAxios, { axiosPublick } from './../Castomhuk/UsePublickAxios';
 
 const Login = () => {
+    const axiosPublick = UsePublickAxios()
     const { signInUser, logineWithGoogle } = useContext(CreatAuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -48,7 +50,14 @@ const Login = () => {
     const handleGoogleLogin = async () => {
         try {
             const result = await logineWithGoogle();
-            console.log(result);
+            
+            const userdata = {
+                name: result.user.displayName,
+                email: result.user.email,
+            }
+            console.log(userdata);
+            axiosPublick.post('/users', userdata)
+
             navigate(from);
         } catch (error) {
             console.error(error.message);

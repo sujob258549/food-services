@@ -4,9 +4,15 @@ import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
 import { FcSwitchCamera } from "react-icons/fc";
+import UsseAxeos from './../Castomhuk/UsseAxeos';
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { CreatAuthContext } from "../Firebase/Context";
 
 
 const AddReview = () => {
+    const { user } = useContext(CreatAuthContext)
+    const axiosSecur = UsseAxeos();
     const {
         register,
         handleSubmit,
@@ -20,8 +26,28 @@ const AddReview = () => {
         },
     });
 
+    const commentUser = {
+        email: user.email,
+        name: user.displayName,
+
+    }
+
     function onSubmit(data) {
-        console.log(data);
+        const revews = {
+            data, commentUser
+        }
+        axiosSecur.post('/review', revews)
+            .then(result => {
+                if (result.data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your added success",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
     return (
         <div>
@@ -57,24 +83,24 @@ const AddReview = () => {
                 </div>
                 <div className="pt-5">
 
-                <label htmlFor="name">
-                    <label  className="text-xl font-medium pb-4">Do you have any suggestion for us?</label><br />
-                    <input type="text" placeholder="Sugggestion" {...register('suggestion', { required: true })} className="input input-bordered w-full mt-2" />
-                </label>
-                {errors.suggestion && <div>Name is required.</div>}
+                    <label htmlFor="name">
+                        <label className="text-xl font-medium pb-4">Do you have any suggestion for us?</label><br />
+                        <input type="text" placeholder="Sugggestion" {...register('suggestion', { required: true })} className="input input-bordered w-full mt-2" />
+                    </label>
+                    {errors.suggestion && <div>Name is required.</div>}
                 </div>
                 <div className="pt-5">
 
-                <label htmlFor="name">
-                    <label className="text-xl font-medium pb-4">Kindly express your care in a short way.</label><br />
-                    <textarea type="text" placeholder="Review in detail" {...register('express', { required: true })} className="input input-bordered mt-2 w-full h-32 " />
-                </label>
-                {errors.express && <div>express is required.</div>}
+                    <label htmlFor="name">
+                        <label className="text-xl font-medium pb-4">Kindly express your care in a short way.</label><br />
+                        <textarea type="text" placeholder="Review in detail" {...register('express', { required: true })} className="input input-bordered mt-2 w-full h-32 " />
+                    </label>
+                    {errors.express && <div>express is required.</div>}
                 </div>
 
 
                 <button className="bg-gradient-to-r mt-5 md:mt-8 from-[#835D23] btn rounded-none text-xl flex text-white to-[#B58130]" type="submit">
-                Send Review <FcSwitchCamera></FcSwitchCamera>
+                    Send Review <FcSwitchCamera></FcSwitchCamera>
                 </button>
             </form>
         </div>

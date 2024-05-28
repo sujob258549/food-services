@@ -41,6 +41,9 @@ const AdimnMainDasbord = () => {
                                 <NavLink  to={'/admindashbord/manegeitem'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><TfiMenuAlt className="text-2xl"></TfiMenuAlt></span>manage items</NavLink>
                                 <NavLink to={'/admindashbord/manegebook'}  className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaBook className="text-2xl"></FaBook></span>manage bookinges</NavLink>
                                 <NavLink to={'/admindashbord/alluser'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><IoMan className="text-2xl"></IoMan></span> All user</NavLink>
+                                <hr />
+                                <NavLink to={'/'}  className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><FaHome  className="text-2xl"></FaHome ></span>Home</NavLink>
+                                <NavLink to={'/admindashbord/alluser'} className="text-black font-cinzel text-xl font-medium md:ml-5 flex"> <span className="pr-2"><IoMan className="text-2xl"></IoMan></span> All user</NavLink>
                                
                             </div>
                         </nav>

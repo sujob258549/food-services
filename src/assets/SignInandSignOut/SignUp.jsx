@@ -7,7 +7,10 @@ import { CreatAuthContext } from '../Firebase/Context';
 import Swal from 'sweetalert2';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UsePublickAxios, { axiosPublick } from '../Castomhuk/UsePublickAxios';
 const SignUp = () => {
+    // user data goto database
+    const axiosPublick = UsePublickAxios()
     const [shoandHideIcone, setShoandHideIcone] = useState();
     const { creatUser } = useContext(CreatAuthContext)
     const navigete = useNavigate();
@@ -26,17 +29,25 @@ const SignUp = () => {
             toast.error('Please use a stronger password.');
             return;
         }
+
+        const userdata = {
+            name: name,
+            email: email,
+            password: password
+        }
         creatUser(email, password)
             .then(result => {
-                // upadateprofile(name, photourl)
-                // setuser({ ...user, photoURL: photourl, displayName: name })
-                console.log(result)
-                Swal.fire({
-                    icon: "success",
-                    title: "Success...",
-                    text: "Creat a User!",
-                    footer: '<a href="#">Creat User?</a>'
-                });
+                axiosPublick.post('/users', userdata)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Success...",
+                                text: "Creat a User!",
+                                footer: '<a href="#">Creat User?</a>'
+                            });
+                        }
+                    })
                 navigete('/login')
             })
             .catch(error => {

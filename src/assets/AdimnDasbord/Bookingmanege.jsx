@@ -12,7 +12,7 @@ const Bookingmanege = () => {
             <Sheredtitle subhading={'---My Cart---'} hading={'WANNA ADD MORE?'}></Sheredtitle>
             <div className="bg-white pb-10 pt-5">
                 <div className=" py-5 md:pr-5">
-                    <h2 className="text-3xl md:ml-10  font-bold py-5 font-cinzel">Total orders:  <span>0</span></h2>
+                    <h2 className="text-xl md:text-3xl md:ml-10  font-bold py-5 font-cinzel">Total orders:  <span>0</span></h2>
 
                 </div>
                 <div className="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">

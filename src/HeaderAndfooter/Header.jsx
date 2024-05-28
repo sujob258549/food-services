@@ -9,13 +9,13 @@ import { useContext } from 'react';
 import { CreatAuthContext } from '../assets/Firebase/Context';
 import { FaShoppingCart } from 'react-icons/fa';
 import Usecart from '../assets/Castomhuk/Usecart';
+import UseAllcorts from '../assets/Castomhuk/UseAllcorts';
 
 
 
 const Header = () => {
     const { user, signout } = useContext(CreatAuthContext);
-    const [,cart] = Usecart();
-    console.log(cart.length);
+    const [, allcart] = UseAllcorts()
     const navber = <>
 
         <NavLink to={'/'}>Home</NavLink>
@@ -23,15 +23,23 @@ const Header = () => {
 <NavLink>DASHBOARD</NavLink> */}
         <NavLink to={'/ourmenu'}>Our Menu</NavLink>
         <NavLink to={'/ourshop/:cetagory'}>Our Shop</NavLink>
-        <Link to={'/dashbord/home'} className="btn p-0 bg-transparent hover:bg-transparent border-none">
-            <FaShoppingCart />
-            <div className="badge badge-secondary">{cart.length}</div>
-        </Link>
+
         {
             user && (
                 <>
-                
-                       <Link to={'/admindashbord/adminHome'}>Adimn</Link>
+
+                    <Link to={'/admindashbord/adminHome'}>Adimn</Link>
+
+                    <Link  to={'/dashbord/home'} className="flex"> User
+                        <FaShoppingCart className='ml-3'></FaShoppingCart>
+                        <div className="badge badge-secondary">{allcart.length}</div>
+                    </Link>
+
+
+                    <Link to={'/dashbord/home'} className="btn p-0 bg-transparent hover:bg-transparent border-none">
+
+                    </Link>
+
 
                 </>
             )

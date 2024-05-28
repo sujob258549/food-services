@@ -22,6 +22,8 @@ import ManageItem from "./assets/AdimnDasbord/ManageItem";
 import Bookingmanege from "./assets/AdimnDasbord/Bookingmanege";
 import AllUser from "./assets/AdimnDasbord/AllUser";
 import Update from "./assets/AdimnDasbord/Update";
+import Contactus from "./assets/Dasbord/Contactus";
+import Privateroute from './assets/Privaterouter/Privateroute';
 
 
 const router = createBrowserRouter([
@@ -58,7 +60,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'dashbord',
-        element: <MainDasbord></MainDasbord>,
+        element: <Privateroute><MainDasbord></MainDasbord></Privateroute>,
         errorElement: <Errorpagedasbord></Errorpagedasbord>,
         children: [
             {
@@ -94,6 +96,12 @@ const router = createBrowserRouter([
             , {
                 path: 'prement',
                 element: <PrementResurvation></PrementResurvation>
+
+            }
+            ,
+            {
+                path: 'contact',
+                element: <Contactus></Contactus>
 
             }
 
@@ -138,6 +146,7 @@ const router = createBrowserRouter([
                 element: <Update></Update>
 
             }
+           
            
 
         ]
